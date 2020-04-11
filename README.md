@@ -34,21 +34,26 @@ or a model configured.
 
 ### Migrations
 
-- Write a migration for the actors table. An actor should have a `first_name`
+-💩 Write a migration for the actors table. An actor should have a `first_name`
   and a `last_name`.
-- Write a migration for the characters table. A character should have a `name`,
+-💩 Write a migration for the characters table. A character should have a `name`,
   `actor_id`, and a `show_id`––a character will belong to a show (the show
   migration is already provided) and an actor, and we'll keep track of this
   relationship with these database table columns.
-- Write a migration that adds the column `catchphrase` to your character model.
+-💩 Write a migration that adds the column `catchphrase` to your character model.
 
 ### Associations
 
-- Associate the `Actor` model with the `Character` and `Show` model. An actor
+Actors ---< Characters >--- Shows
+
+Shows >--- Network
+
+
+-💩 Associate the `Actor` model with the `Character` and `Show` model. An actor
   should have many characters and many shows through characters.
-- Write a method in the `Actor` class, `#full_name`, that returns the first and
+-💩 Write a method in the `Actor` class, `#full_name`, that returns the first and
   last name of an actor.
-- Write a method in the `Actor` class, `#list_roles`, that lists all of the
+-💩 Write a method in the `Actor` class, `#list_roles`, that lists all of the
   characters that actor has alongside the show that the character is in. So, for
   instance, if we had an actor, Peter Dinklage, a character, Tyrion Lannister,
   and a show, Game of Thrones, we with
@@ -69,7 +74,7 @@ or a model configured.
     ['Tyrion Lannister - Game of Thrones']
     ```
 
-- Define a method in the `Character` class, `#say_that_thing_you_say`, using a
+-💩 Define a method in the `Character` class, `#say_that_thing_you_say`, using a
   given character's catchphrase. Using Tyrion as an example again, the returned
   string should look like the following:
 
@@ -79,7 +84,7 @@ or a model configured.
     #=> 'Tyrion Lannister always says: A Lannister always pays his debts'
     ```
 
-- Define a method in the `Show` class called `#actors_list` that returns an
+-💩 Define a method in the `Show` class called `#actors_list` that returns an
   Array of the full names of each actor associated with the a show. Remember,
   a show should have many actors through characters.
 
